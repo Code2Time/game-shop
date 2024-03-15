@@ -2,7 +2,7 @@ import './Navbar.css'
 import { Fragment} from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { PiShoppingCartBold } from "react-icons/pi";
 
 
@@ -37,19 +37,19 @@ function Navbar() {
                   <div className="flex space-x-4 ">
                     <NavLink
                       to="/shop"
-                      className="text-gray-300 hover:bg-transparent  hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
+                      className="text-gray-300 hover:bg-transparent  hover:text-white   px-3 py-2 text-sm font-medium Lamia"
                     >
                       محصولات
                     </NavLink>
                     <NavLink
                       to="/news"
-                      className="text-gray-300 hover:bg-transparent  hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
+                      className="text-gray-300 hover:bg-transparent  hover:text-white   px-3 py-2 text-sm font-medium Lamia"
                     >
                       اخبار
                     </NavLink>
                     <NavLink
                       to="/"
-                      className="text-gray-300 hover:bg-transparent hover:text-white rounded-md px-3 py-2 text-sm font-medium Lamia"
+                      className="text-gray-300 hover:bg-transparent hover:text-white  px-3 py-2 text-sm font-medium Lamia"
                     >
                       صفحه اصلی
                     </NavLink>
@@ -60,7 +60,7 @@ function Navbar() {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
-                  <a href=""><PiShoppingCartBold size={25} color='white' /></a>
+                  <NavLink to='/shop'><PiShoppingCartBold size={22} color='#eee' className='transition-all hover:-translate-y-1' /></NavLink>
                   </div>
                   <Transition
                     as={Fragment}
