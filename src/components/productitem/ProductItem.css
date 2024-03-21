@@ -1,0 +1,5 @@
+.card-container{
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.51);
+}
