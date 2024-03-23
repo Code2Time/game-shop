@@ -5,7 +5,7 @@ import gta from "../../assets/videos/gta.mp4";
 function News() {
   return (
     <>
-      <div className="background">
+      <div data-aos="fade-up" data-aos-anchor-placement="top-center" className="background">
         <Navbar />
       </div>
 

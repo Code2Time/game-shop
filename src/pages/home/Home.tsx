@@ -3,7 +3,7 @@ import './Home.css'
 function Home() {
   return (
   <>
-  <div className='header-container'>
+  <div data-aos="fade-up" data-aos-anchor-placement="top-center" className='header-container'>
   <Navbar />
   </div>
 
