@@ -7,7 +7,7 @@ import { IoMdDownload } from "react-icons/io";
 
 function ProductItem() {
   return (
-    <div data-aos="zoom-in" className=" my-20 overflow-hidden  card-container w-[250px] h-[415px]  rounded-md shadow-lg shadow-slate-600 ">
+    <div data-aos="zoom-in" className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 my-3 overflow-hidden  card-container w-[250px] h-[415px]  rounded-md shadow-lg shadow-slate-600 mx-auto ">
       <div className="card-img p-3">
         <img
           className="rounded-md shadow-sm shadow-gray-50"

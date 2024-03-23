@@ -13,7 +13,14 @@ function Shop() {
         <h1 className="Lalezar text-right my-12 text-zinc-300 ">
           جدید ترین محصولات
         </h1>
+        <div className="grid grid-cols-12 gap-5">
         <ProductItem   />
+        <ProductItem   />
+        <ProductItem   />
+        <ProductItem   />
+        <ProductItem   />
+        </div>
+     
       </Container>
     </div>
   );
