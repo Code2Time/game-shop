@@ -1,6 +1,7 @@
 import { Link} from "react-router-dom";
 import "./ProductItem.css";
 import { IoMdDownload } from "react-icons/io";
+import Button from "../button/Button";
 
 function ProductItem() {
 
@@ -27,7 +28,9 @@ function ProductItem() {
         </p>
         <span className="text-gray-500 Lalezar p-2">22$</span>
       </div>
-      <button className=" transition-all hover:-translate-y-1 w-full  my-2 ">
+      <Button onClick={() =>{
+        alert('Hello')
+      }} className=" transition-all hover:-translate-y-1 w-full  my-2 ">
         <Link
           to={`/shop/${1}`}
           className=" hover:text-white text-slate-400 text-lg Lalezar flex flex-row-reverse justify-center items-center "
@@ -35,7 +38,7 @@ function ProductItem() {
           <IoMdDownload className="mx-2" />
           دانلود
         </Link>
-      </button>
+      </Button>
     </div>
   );
 }

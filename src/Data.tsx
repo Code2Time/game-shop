@@ -1,11 +1,4 @@
-type Iproduct ={
-    id : number
-    title : string
-    img : string
-    desc : string
-    price : string
-  }
-const productData:Iproduct= [
+const productData: Array<{id: number, title: string, img: string , desc : string , price : string}> =[
   {
     id: 1,
     title: "Need For Speed",
