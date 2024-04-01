@@ -1,10 +1,9 @@
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./ProductItem.css";
 import { IoMdDownload } from "react-icons/io";
 import Button from "../button/Button";
 
 function ProductItem() {
-
   return (
     <div
       data-aos="zoom-in"
@@ -28,9 +27,10 @@ function ProductItem() {
         </p>
         <span className="text-gray-500 Lalezar p-2">22$</span>
       </div>
-      <Button onClick={() =>{
-        alert('Hello')
-      }} className=" transition-all hover:-translate-y-1 w-full  my-2 ">
+      <Button
+        variant="secondary"
+        className=" transition-all hover:-translate-y-1 w-full  my-2 "
+      >
         <Link
           to={`/shop/${1}`}
           className=" hover:text-white text-slate-400 text-lg Lalezar flex flex-row-reverse justify-center items-center "
