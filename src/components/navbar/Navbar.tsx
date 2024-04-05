@@ -2,7 +2,7 @@ import './Navbar.css'
 import { Fragment} from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { PiShoppingCartBold } from "react-icons/pi";
 
 
@@ -87,13 +87,13 @@ function Navbar() {
               </NavLink>
               <NavLink
                 to="/news"
-                className="text-gray-300 hover:bg-transparent  hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
+                className="text-gray-300 hover:bg-transparent !block text-center  hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
               >
                 اخبار
               </NavLink>
               <NavLink
                 to="/shop"
-                className="text-gray-300 hover:bg-transparent  hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
+                className="text-gray-300 hover:bg-transparent !block  text-center   hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
               >
                 محصولات
               </NavLink>

@@ -85,13 +85,13 @@ function Navbarpro() {
               </NavLink>
               <NavLink
                 to="/news"
-                className="text-gray-300 hover:bg-transparent  hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
+                className="text-gray-300 hover:bg-transparent !block text-center  hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
               >
                 اخبار
               </NavLink>
               <NavLink
                 to="/shop"
-                className="text-gray-300 hover:bg-transparent  hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
+                className="text-gray-300 hover:bg-transparent  !block text-center hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
               >
                 محصولات
               </NavLink>
