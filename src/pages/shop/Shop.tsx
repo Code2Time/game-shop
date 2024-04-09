@@ -10,7 +10,6 @@ import Navbarpro from "../../components/navbarpro/Navbarpro";
 
 
 function Shop() {
-  const [products , setProducts] = useState()
   return (
     <div data-aos="fade-up" data-aos-anchor-placement="top-center">
       <div className="shop-container w-full ">
