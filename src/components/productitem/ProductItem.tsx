@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import "./ProductItem.css";
 import { FaCartPlus } from "react-icons/fa";
-import Button from "../button/Button";
+import { Iproducts } from "../../server/Server";
 
-function ProductItem() {
+
+
+type Tproducts = Iproducts
+
+
+
+
+
+
+function ProductItem({title , image , description , price}:Tproducts) {
   return (
     <div
       data-aos="zoom-in"
@@ -12,20 +21,19 @@ function ProductItem() {
       <div className="card-img p-3">
         <img
           className="rounded-md shadow-sm shadow-gray-50"
-          src="https://4kwallpapers.com/images/walls/thumbs_2t/14212.jpg"
+          src={image}
         />
       </div>
       <div className="card-title px-3 ">
         <h3 className="text-white Lalezar border-r-2 border-teal-600 px-2">
-          کلش آف کلنز
+         {title}
         </h3>
       </div>
       <div className="card-body py-8 px-2 flex flex-col  items-center">
         <p className="text-zinc-300 text-justify ">
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-          استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+         {description}
         </p>
-        <span className="text-gray-500 Lalezar p-2">22$</span>
+        <span className="text-gray-500 Lalezar p-2">{price}</span>
       </div>
      
         <Link

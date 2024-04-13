@@ -1,28 +1,29 @@
 import { useEffect, useState } from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import './Home.css'
-import { getproducts } from '../../services/api';
 import { RiArrowDownDoubleFill } from "react-icons/ri";
 import Container from '../../components/container/Container';
 import ProductItem from '../../components/productitem/ProductItem';
+import { Iproducts } from '../../server/Server';
+import axios from 'axios';
 
 
 
 function Home() {
 
-//  const [products , setProducts]=useState([]) 
+ const [products , setProducts]=useState<Iproducts[]>([]) ;
 
-// useEffect(() =>{
-//  getproducts()
-//  .then((res) => {
-//   setProducts(res)
-//  })
-//  .catch((err) =>{
-//   console.log(err)
-//  })
-//  console.log(products)
+useEffect(() =>{
+axios.get('http://localhost:3000/products')
+.then( (res) => {
+setProducts(res.data)
+})
+ 
+},[]);
 
-// },[])
+
+
+
   return (
   <>
   <div data-aos="fade-up" data-aos-anchor-placement="top-center" className='header-container'>
@@ -32,13 +33,13 @@ function Home() {
      <a href=""><RiArrowDownDoubleFill filter='drop-shadow(0 10 20 #2441a0 )' size={50} color='#7d7f8c' className='arrow-icon'/></a> 
       </button>
   </div>
-  {/* <Container> */}
- {/* {
+  <Container>
+ {
   products.map(item => (
     <ProductItem {...item}/>
   ))
- } */}
-  {/* </Container> */}
+ }
+  </Container>
   </div>
   </>
   )
