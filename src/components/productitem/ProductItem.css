@@ -3,3 +3,6 @@
     -webkit-backdrop-filter: blur(25px) saturate(200%);
     background-color: rgba(0, 0, 0, 0.51);
 }
+.card-container:hover{
+    transform: translateY(-2.5px) !important;
+}

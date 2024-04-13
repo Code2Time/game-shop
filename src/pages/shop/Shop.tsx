@@ -1,33 +1,46 @@
-import { useState } from "react";
-import Container from "../../components/container/Container";
+import { useEffect, useState } from "react";
 import ProductItem from "../../components/productitem/ProductItem";
 import "./Shop.css";
-import productData from '../../Data'
 import Navbarpro from "../../components/navbarpro/Navbarpro";
+import { Iproducts } from '../../server/Server';
+import axios from 'axios';
+
 
 
 
 
 
 function Shop() {
+
+
+
+
+  const [products , setProducts]=useState<Iproducts[]>([]) ;
+
+  useEffect(() =>{
+  axios.get('http://localhost:3000/products')
+  .then( (res) => {
+  setProducts(res.data)
+  })
+   
+  },[]);
+
+
+
+
   return (
     <div data-aos="fade-up" data-aos-anchor-placement="top-center">
       <div className="shop-container w-full ">
         <Navbarpro />
       </div>
-      <Container>
-        <h1 className="Lalezar text-right my-12 text-zinc-300 ">
-          جدید ترین محصولات
-        </h1>
-        <div className="grid grid-cols-12 gap-5">
-        <ProductItem   />
-        <ProductItem   />
-        <ProductItem   />
-        <ProductItem   />
-        <ProductItem   />
-        </div>
-     
-      </Container>
+      <div className='w-10/12 max-w-[1000px] h-auto grid grid-cols-12 mx-auto my-24'>
+        <h1 className="col-span-12 my-5 text-xl text-white Lalezar">جدید ترین ها</h1>
+ {
+  products.map(item => (
+    <ProductItem {...item}/>
+  ))
+ }
+  </div>
     </div>
   );
 }

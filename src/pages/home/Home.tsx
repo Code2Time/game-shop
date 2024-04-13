@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import './Home.css'
 import { RiArrowDownDoubleFill } from "react-icons/ri";
-import Container from '../../components/container/Container';
 import ProductItem from '../../components/productitem/ProductItem';
 import { Iproducts } from '../../server/Server';
 import axios from 'axios';
@@ -30,16 +29,16 @@ setProducts(res.data)
   <Navbar />
   <div className='arrow-button mt-[85vh] mx-auto text-center'>
       <button className='transition-all hover:-translate-y-1'>
-     <a href=""><RiArrowDownDoubleFill filter='drop-shadow(0 10 20 #2441a0 )' size={50} color='#7d7f8c' className='arrow-icon'/></a> 
+     <a href="# card-container"><RiArrowDownDoubleFill filter='drop-shadow(0 10 20 #2441a0 )' size={50} color='#7d7f8c' className='arrow-icon'/></a> 
       </button>
   </div>
-  <Container>
+  <div className='w-10/12 max-w-[1000px] h-auto grid grid-cols-12 mx-auto my-24'>
  {
   products.map(item => (
     <ProductItem {...item}/>
   ))
  }
-  </Container>
+  </div>
   </div>
   </>
   )
