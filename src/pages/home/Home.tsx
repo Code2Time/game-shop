@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Elects from '../../components/best/Best';
 import Navbar from '../../components/navbar/Navbar'
 import './Home.css'
 import { RiArrowDownDoubleFill } from "react-icons/ri";
@@ -32,13 +33,16 @@ setProducts(res.data)
      <a href="# card-container"><RiArrowDownDoubleFill filter='drop-shadow(0 10 20 #2441a0 )' size={50} color='#7d7f8c' className='arrow-icon'/></a> 
       </button>
   </div>
-  <div className='w-10/12 max-w-[1000px] h-auto grid grid-cols-12 mx-auto my-24'>
+  <Elects />
+  <div className='w-10/12 max-w-[1000px] h-auto grid grid-cols-12 gap-4 mx-auto my-24'>
+    <h1 className='col-span-12 text-xl text-cyan-400 border-r-4 border-slate-950 px-2 Lalezar'>آخرین محصولات</h1>
  {
   products.map(item => (
     <ProductItem {...item}/>
   ))
  }
   </div>
+  
   </div>
   </>
   )
