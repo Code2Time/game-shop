@@ -34,7 +34,7 @@ setProducts(res.data)
       </button>
   </div>
   <Elects />
-  <div className='w-10/12 max-w-[1000px] h-auto grid grid-cols-12 gap-4 mx-auto my-24'>
+  <div className='w-10/12 max-w-[1000px] h-auto grid grid-cols-12 gap-4 mx-auto my-36'>
     <h1 className='col-span-12 text-xl text-cyan-400 border-r-4 border-slate-950 px-2 Lalezar'>آخرین محصولات</h1>
  {
   products.map(item => (
