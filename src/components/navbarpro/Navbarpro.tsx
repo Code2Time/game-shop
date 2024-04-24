@@ -58,7 +58,7 @@ function Navbarpro() {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
-                  <NavLink to='/shop'><PiShoppingCartBold size={22} color='#eee' className='transition-all hover:-translate-y-1' /></NavLink>
+                  <NavLink to='/store'><PiShoppingCartBold size={22} color='#eee' className='transition-all hover:-translate-y-1' /></NavLink>
                   </div>
                   <Transition
                     as={Fragment}
