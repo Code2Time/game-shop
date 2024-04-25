@@ -1,0 +1,17 @@
+.add-btn{
+    all: unset;
+    width: 33%;
+    height: 25px;
+    border: 0.3px solid rgba(255, 0, 0, 0.062);
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    background-color: #948979bd !important ;
+}
+.add-btn:hover{
+    scale: 1.05;
+    cursor: pointer;
+    width: 34%;
+    background-color: #948979e3 !important ;
+
+}
