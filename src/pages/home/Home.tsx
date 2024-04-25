@@ -6,6 +6,7 @@ import { RiArrowDownDoubleFill } from "react-icons/ri";
 import ProductItem from '../../components/productitem/ProductItem';
 import { Iproducts } from '../../server/Server';
 import axios from 'axios';
+import Footer from '../../components/footer/Footer';
 
 
 
@@ -42,7 +43,7 @@ setProducts(res.data)
   ))
  }
   </div>
-  
+  <Footer />
   </div>
   </>
   )

@@ -4,6 +4,7 @@ import "./Shop.css";
 import Navbarpro from "../../components/navbarpro/Navbarpro";
 import { Iproducts } from '../../server/Server';
 import axios from 'axios';
+import Footer from "../../components/footer/Footer";
 
 
 
@@ -41,6 +42,7 @@ function Shop() {
   ))
  }
   </div>
+  <Footer />
     </div>
   );
 }

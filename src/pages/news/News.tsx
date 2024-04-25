@@ -2,6 +2,7 @@ import Navbar from "../../components/navbar/Navbar";
 import "./News.css";
 import gta from "../../assets/videos/gta.mp4";
 import Container from "../../components/container/Container";
+import Footer from "../../components/footer/Footer";
 
 function News() {
   return (
@@ -53,6 +54,7 @@ function News() {
         </div>
         
       </Container>
+      <Footer />
     </>
   );
 }
