@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Elects from '../../components/best/Best';
+import Elects from '../../components/property/Property';
 import Navbar from '../../components/navbar/Navbar'
 import './Home.css'
 import { RiArrowDownDoubleFill } from "react-icons/ri";
