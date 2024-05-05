@@ -5,6 +5,7 @@ import axios from "axios"
 import Navbarpro from "../navbarpro/Navbarpro";
 import './Product.css'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import Footer from "../footer/Footer";
 
 function Product() {
 const params = useParams<{id : string}>();
@@ -41,6 +42,7 @@ axios.get(`http://localhost:3000/products/${params.id}`).then((res) =>{
           </div>
         </div>
       </div>
+      <Footer />
       </div>
   )
 }

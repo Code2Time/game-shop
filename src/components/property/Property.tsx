@@ -7,7 +7,7 @@ function Property() {
   return <>
     <section>
       <div className="property-container max-w-[1500px] w-11/12 mx-auto h-auto grid grid-cols-12  mt-28 gap-5">
-        <div id="odd-property" className="property-item col-span-12 sm:col-span-6 md:col-span-3 h-20  flex justify-around items-center py-4 px-2">
+        <div data-aos="zoom-in" id="odd-property" className="property-item col-span-12 sm:col-span-6 md:col-span-3 h-20  flex justify-around items-center py-4 px-2">
           <div className="icone">
           <FaRegCreditCard id="e" size={28} color="#fff" />
           </div>
@@ -16,7 +16,7 @@ function Property() {
               <p className="Lalezar text-gray-400 body-title">بهترین قیمت بازار</p>
           </div>
         </div>
-        <div id="even-property" className="property-item col-span-12 sm:col-span-6 md:col-span-3 h-20  flex justify-around items-center py-4 px-2">
+        <div data-aos="zoom-in" id="even-property" className="property-item col-span-12 sm:col-span-6 md:col-span-3 h-20  flex justify-around items-center py-4 px-2">
           <div className="icone">
           <FaHeadset id="o" size={28} color="#fff" />
           </div>
@@ -25,7 +25,7 @@ function Property() {
               <p className="Lalezar text-gray-400 body-title">24ساعته و 7روز هفته</p>
           </div>
         </div>
-        <div id="odd-property" className="property-item col-span-12 sm:col-span-6 md:col-span-3 h-20  flex justify-around items-center py-4 px-2">
+        <div data-aos="zoom-in" id="odd-property" className="property-item col-span-12 sm:col-span-6 md:col-span-3 h-20  flex justify-around items-center py-4 px-2">
           <div className="icone">
           < FaClockRotateLeft id="e" size={28} color="#fff" />
           </div>
@@ -34,7 +34,7 @@ function Property() {
               <p className="Lalezar text-gray-400 body-title">در صورت عدم رضایت</p>
           </div>
         </div>
-        <div id="even-property" className="property-item col-span-12 sm:col-span-6 md:col-span-3 h-20  flex justify-around items-center py-4 px-2">
+        <div data-aos="zoom-in" id="even-property" className="property-item col-span-12 sm:col-span-6 md:col-span-3 h-20  flex justify-around items-center py-4 px-2">
           <div className="icone">
          <span > <LiaShippingFastSolid id="o" size={28} color="#fff" /></span>
           </div>
