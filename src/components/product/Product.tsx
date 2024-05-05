@@ -6,6 +6,7 @@ import Navbarpro from "../navbarpro/Navbarpro";
 import './Product.css'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import Footer from "../footer/Footer";
+import { useShopingCardContext } from "../../context/ShoppingCardContext";
 
 function Product() {
 const params = useParams<{id : string}>();
@@ -17,7 +18,8 @@ axios.get(`http://localhost:3000/products/${params.id}`).then((res) =>{
 })
 },[])
 
-
+const { GetProductQty ,HandleDecreaseProductQty ,HandleIncreaseProductQty , cardItems} = useShopingCardContext()
+console.log(cardItems)
 
   return (
     <div>
@@ -34,8 +36,9 @@ axios.get(`http://localhost:3000/products/${params.id}`).then((res) =>{
         </div>
         <div className="col-span-12 h-10 ">
           <div className="button-container grid grid-cols-12 ">
-            <button  className="col-span-12  mx-auto add-btn flex justify-center items-center flex-row-reverse my-5" type="submit"><MdOutlineAddShoppingCart className="mx-2 " />افزودن به سبد خرید</button>
-          
+            <button onClick={()=> HandleIncreaseProductQty(parseInt(params.id as string))}  className="col-span-12  mx-auto add-btn flex justify-center items-center flex-row-reverse my-5" type="submit"><MdOutlineAddShoppingCart className="mx-2 " />افزودن به سبد خرید</button>
+            <h1>{GetProductQty((parseInt(params.id as string)))}</h1>
+          <button className="col-span-12  mx-auto add-btn flex justify-center items-center flex-row-reverse my-5" type="submit" onClick={()=>HandleDecreaseProductQty(parseInt(params.id as string))}>-</button>
           </div>
           <div className="show-product">
           
