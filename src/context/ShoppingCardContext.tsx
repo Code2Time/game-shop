@@ -1,6 +1,10 @@
 /*context*/
 import React, { createContext, useContext, useState } from "react";
 
+
+
+
+
 interface ShoppingCardProvider {
   children: React.ReactNode;
 }
@@ -19,7 +23,7 @@ interface ShopingCardContext {
 
 
 
-export const ShopingCardContext = createContext({} as ShopingCardContext ); /*create context*/
+export const ShopingCardContext = createContext({} as ShopingCardContext );     /*create context*/
 
 
 export const useShopingCardContext = () => {
@@ -28,13 +32,15 @@ return useContext(ShopingCardContext)
 
 
 export function ShoppingCardProvider({ children }: ShoppingCardProvider) {     /* a layout component for use context! */
-const [cardItems , setCardItems]= useState<carditem[]>([])    
+
+
+const [cardItems , setCardItems]= useState<carditem[]>([])                    /*an array for products */
 
 const HandleIncreaseProductQty = (id : number) =>{                    
-  setCardItems(currentItems => {                                           /*get last update*/
-   let selectedItem = currentItems.find(item => item.id == id)             /*find product */
+  setCardItems(currentItems => {                                             /*get last update*/
+   let selectedItem = currentItems.find(item => item.id == id)               /*find product */
     if(selectedItem == null){
-    return[...cardItems , {id : id , qty : 1}];
+    return[...cardItems , {id : id , qty : 1}];                               /*return all products + new target */
    }
    else{
     return currentItems.map(item =>{
@@ -46,14 +52,14 @@ const HandleIncreaseProductQty = (id : number) =>{
      }
     })
    }
-  })
+  });
 };
 
 const HandleDecreaseProductQty = (id : number) =>{
   setCardItems(currentItems =>{
-    let selectedItem = currentItems.find(item => item.id == id)
+    let selectedItem = currentItems.find(item => item.id == id)              /*get last update*/
     if(selectedItem?.qty === 1){
-      return currentItems.filter(item => item.id !== id)
+      return currentItems.filter(item => item.id !== id)                     /*return every products - target */
     }  else{
       return currentItems.map(item =>{
        if (item.id == id) {
@@ -67,8 +73,8 @@ const HandleDecreaseProductQty = (id : number) =>{
   })
 }
 
-const GetProductQty = (id : number)=>{
-  return cardItems.find(item => item.id == id)?.qty || 0
+const GetProductQty = (id : number)=>{                                /* for show qty product */
+  return cardItems.find(item => item.id == id)?.qty || 0    
 }
 
   return (

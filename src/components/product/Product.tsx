@@ -8,23 +8,42 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 import Footer from "../footer/Footer";
 import { useShopingCardContext } from "../../context/ShoppingCardContext";
 
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 function Product() {
 const params = useParams<{id : string}>();
 const[product , setProducts] = useState<Iproducts>()
 
-useEffect(() => {
+const notify = () => toast.success(`   به سبد خرید اضافه شد ${product?.title}`, {
+  position: "bottom-right",
+  autoClose: 1000,
+  hideProgressBar: true,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "dark",
+  });                /* notify message */
+
+
+useEffect(() => {                                                                    /*send request for get data */
 axios.get(`http://localhost:3000/products/${params.id}`).then((res) =>{
     setProducts(res.data)
 })
 },[])
 
-const { GetProductQty ,HandleDecreaseProductQty ,HandleIncreaseProductQty , cardItems} = useShopingCardContext()
+const { GetProductQty ,HandleDecreaseProductQty ,HandleIncreaseProductQty , cardItems } = useShopingCardContext()
 console.log(cardItems)
+
 
   return (
     <div>
       <Navbarpro />
-      <div className="shop-product-container max-w-[1000px] w-10/12 h-[650px] sm:h-[400px] mx-auto grid grid-cols-12  my-52 shadow-lg my-3">
+      <div className="shop-product-container max-w-[1000px] w-10/12 h-[650px] sm:h-[400px] mx-auto grid grid-cols-12  my-52 shadow-lg ">
         <div className="container-item col-span-12 sm:col-span-4  h-auto p-5"> 
          <img className="rounded-md transition-all hover:-translate-y-1 hover:cursor-pointer" src={product?.image} alt="" />
          
@@ -36,12 +55,19 @@ console.log(cardItems)
         </div>
         <div className="col-span-12 h-10 ">
           <div className="button-container grid grid-cols-12 ">
-            <button onClick={()=> HandleIncreaseProductQty(parseInt(params.id as string))}  className="col-span-12  mx-auto add-btn flex justify-center items-center flex-row-reverse my-5" type="submit"><MdOutlineAddShoppingCart className="mx-2 " />افزودن به سبد خرید</button>
-            <h1>{GetProductQty((parseInt(params.id as string)))}</h1>
-          <button className="col-span-12  mx-auto add-btn flex justify-center items-center flex-row-reverse my-5" type="submit" onClick={()=>HandleDecreaseProductQty(parseInt(params.id as string))}>-</button>
-          </div>
-          <div className="show-product">
-          
+            <button onClick={()=> {HandleIncreaseProductQty(parseInt(params.id as string)) ; notify();}}  className="col-span-12  mx-auto add-btn flex justify-center items-center flex-row-reverse my-5" type="submit"><MdOutlineAddShoppingCart className="mx-2 " />افزودن به سبد خرید</button>
+            <ToastContainer
+             position="bottom-right"
+             autoClose={1000}
+             hideProgressBar
+             newestOnTop={false}
+             closeOnClick={false}
+             rtl={false}
+             pauseOnFocusLoss
+             draggable
+             pauseOnHover
+             theme="dark"
+             />
           </div>
         </div>
       </div>

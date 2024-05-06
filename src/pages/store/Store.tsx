@@ -3,13 +3,13 @@ import Footer from '../../components/footer/Footer'
 
 function Store() {
   return (
-    <>
-    <div>
+  
+    <div data-aos='fade-up'>
         <Navbarpro />
       store page
     </div>
-      <Footer />
-    </>
+ 
+
   )
 }
 
