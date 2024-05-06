@@ -1,0 +1,26 @@
+.stor-box {
+  box-shadow: rgba(57, 57, 57, 0.223) 0px 3px 8px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(15, 15, 15, 0.375);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.062);
+}
+.show-product {
+  line-height: 5rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(15, 15, 15, 0.068);
+    color: #FFF;
+}
+.handle-btn{
+    transition: all 0.2s;
+    font-size: 20px;
+    border: 0.1px solid rgba(128, 128, 128, 0.311);
+}
+.handle-btn:hover{
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(15, 15, 15, 0.149);
+    cursor: pointer;
+}
