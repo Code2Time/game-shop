@@ -18,7 +18,8 @@ interface ShopingCardContext {
     cardItems : carditem[],
     HandleIncreaseProductQty : (id : number)=> void,
     HandleDecreaseProductQty : (id : number)=> void,
-    GetProductQty : (id : number)=> number
+    GetProductQty : (id : number)=> number,
+    cartQty : number
 }
 
 
@@ -72,13 +73,16 @@ const HandleDecreaseProductQty = (id : number) =>{
      }
   })
 }
+const cartQty = cardItems.reduce( (totalQty , item) => totalQty + item.qty , 0)     /*get selected products Qty */
+
+
 
 const GetProductQty = (id : number)=>{                                /* for show qty product */
   return cardItems.find(item => item.id == id)?.qty || 0    
 }
 
   return (
-    <ShopingCardContext.Provider value={{cardItems , HandleIncreaseProductQty , HandleDecreaseProductQty ,GetProductQty}}>
+    <ShopingCardContext.Provider value={{cartQty , cardItems , HandleIncreaseProductQty , HandleDecreaseProductQty ,GetProductQty}}>
       {children}
     </ShopingCardContext.Provider>
   );

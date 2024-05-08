@@ -3,15 +3,18 @@ import Navbarpro from "../../components/navbarpro/Navbarpro";
 import { useShopingCardContext } from "../../context/ShoppingCardContext";
 import "./Store.css";
 import { TiShoppingCart } from "react-icons/ti";
+import  emptycart from '../../assets/images/empty-cart.svg'
+import { Link } from "react-router-dom";
+import { TbHandClick } from "react-icons/tb";
 function Store() {
 
-const {cardItems} = useShopingCardContext();
+const {cardItems , cartQty} = useShopingCardContext();
 console.log(cardItems)
 
   return (
     <div data-aos="fade-up">
       <Navbarpro />
-      <div className="stor-box max-w-[1000px] w-11/12 mx-auto my-20 h-auto grid grid-cols-12 py-7 px-5">
+      {cartQty !== 0 ?  <div className="stor-box max-w-[1000px] w-11/12 mx-auto my-20 h-auto grid grid-cols-12 py-7 px-5">
         <div className="col-span-12 flex justify-around items-start my-2">
           <h1 className="Lalezar sm:text-2xl  text-slate-200 ">
          
@@ -43,8 +46,15 @@ console.log(cardItems)
         </div>
         <hr className="col-span-12" />
         </div>
-      </div>
+      </div>  : <div className="h-[100vh] flex flex-col  justify-center items-center">
+        <img src={emptycart} className="hover:cursor-pointer transition-all hover:-translate-y-2" />
+        <h1 className="text-2xl text-slate-300 Lalezar text-center my-32">سبد خرید شما خالی است! </h1>
+      <Link to='/shop' className="text-zinc-950 Lalezar flex flex-row-reverse justify-center items-center transition-all hover:text-gray-400 hover:cursor-pointer">
+      <span ><TbHandClick size={20} /></span><span> برای خرید محصول کلیک کنید</span>
+      </Link>
+        </div> }
       <Footer />
+      
     </div>
   );
 }

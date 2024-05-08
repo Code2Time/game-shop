@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import { PiShoppingCartBold } from "react-icons/pi";
+import { useShopingCardContext } from '../../context/ShoppingCardContext';
 
 
 
@@ -12,7 +13,7 @@ import { PiShoppingCartBold } from "react-icons/pi";
 
 
 function Navbar() {
-
+ const {cartQty} = useShopingCardContext();
   return (
    <>
        <Disclosure id="nav-container" as="nav" className="sticky top-0">
@@ -60,7 +61,10 @@ function Navbar() {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
-                  <NavLink to='/store'><PiShoppingCartBold size={22} color='#eee' className='transition-all hover:-translate-y-1' /></NavLink>
+                  <NavLink to='/store'> <div className='relative'>
+                 <PiShoppingCartBold size={22} color='#eee' className='transition-all hover:-translate-y-1' />
+                 {cartQty !== 0 ? <span className='z-10 absolute order-3 w-4 h-auto rounded-full bg-red-600 text-white text-center text-[10px] -top-1 -right-2'>{cartQty}</span> : ''}
+                 </div></NavLink>
                   </div>
                   <Transition
                     as={Fragment}
