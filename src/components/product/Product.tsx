@@ -36,7 +36,7 @@ axios.get(`http://localhost:3000/products/${params.id}`).then((res) =>{
 })
 },[])
 
-const { GetProductQty ,HandleDecreaseProductQty ,HandleIncreaseProductQty , cardItems } = useShopingCardContext()
+const {HandleIncreaseProductQty  , cardItems } = useShopingCardContext()
 console.log(cardItems)
 
 

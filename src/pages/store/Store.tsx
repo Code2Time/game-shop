@@ -4,12 +4,12 @@ import { useShopingCardContext } from "../../context/ShoppingCardContext";
 import "./Store.css";
 import { TiShoppingCart } from "react-icons/ti";
 import  emptycart from '../../assets/images/empty-cart.svg'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { TbHandClick } from "react-icons/tb";
 function Store() {
 
-const {cardItems , cartQty} = useShopingCardContext();
-console.log(cardItems)
+const { cartQty ,HandleDecreaseProductQty , HandleIncreaseProductQty , cardItems } = useShopingCardContext();
+const params = useParams<{id : string}>()
 
   return (
     <div data-aos="fade-up">
@@ -20,9 +20,10 @@ console.log(cardItems)
          
             سبد خریدشما !
           </h1>
-          <p className=" flex justify-end text-slate-300">
+          <p className=" flex justify-end text-slate-300 relative">
             <span>
               <TiShoppingCart size={22} />
+              {cartQty !== 0 ? <span className='z-10 absolute order-3 w-4 h-auto rounded-full bg-red-600 text-white text-center text-[10px] -top-1 -right-2'>{cartQty}</span> : ''}
             </span>
             مورد
           </p>
@@ -37,9 +38,9 @@ console.log(cardItems)
             <p className="text-neutral-300">تولید .....</p>
          </div>
         <div className=" col-span-12 sm:col-span-2 flex justify-center items-center mx-2 my-10 sm:my-0 ">
-          <button className=" handle-btn w-10 h-10 rounded-full  ">+</button>
-          <h1 className="show-product mx-3 w-10 h-20 text-center rounded-full">5</h1>
-          <button className="handle-btn w-10 h-10 rounded-full  ">-</button>
+          <button  className=" handle-btn w-10 h-10 rounded-full  ">+</button>
+          <h1 className="show-product mx-3 w-10 h-20 text-center rounded-full">{cartQty}</h1>
+          <button className=" handle-btn w-10 h-10 rounded-full  ">-</button>
         </div>
         <div className="Show-price col-span-12 sm:col-span-2 flex justify-center items-center">
           <h1 className="text-2xl text-gray-200 my-10 sm:my-0 ">120$</h1>

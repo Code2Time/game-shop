@@ -18,6 +18,7 @@ interface ShopingCardContext {
     cardItems : carditem[],
     HandleIncreaseProductQty : (id : number)=> void,
     HandleDecreaseProductQty : (id : number)=> void,
+    HandleRemoveProduct : (id : number)=> void ,
     GetProductQty : (id : number)=> number,
     cartQty : number
 }
@@ -59,12 +60,12 @@ const HandleIncreaseProductQty = (id : number) =>{
 const HandleDecreaseProductQty = (id : number) =>{
   setCardItems(currentItems =>{
     let selectedItem = currentItems.find(item => item.id == id)              /*get last update*/
-    if(selectedItem?.qty === 1){
+    if(selectedItem?.qty == 1){
       return currentItems.filter(item => item.id !== id)                     /*return every products - target */
     }  else{
-      return currentItems.map(item =>{
+      return currentItems.map((item) =>{
        if (item.id == id) {
-        return {...item , qty : item.qty -1}
+        return {...item , qty : item.qty - 1}
        }
        else{
         return item
@@ -73,6 +74,12 @@ const HandleDecreaseProductQty = (id : number) =>{
      }
   })
 }
+
+
+const HandleRemoveProduct = (id : number) => {
+  setCardItems(currentItems => currentItems.filter(item => item.id != id))
+}
+
 const cartQty = cardItems.reduce( (totalQty , item) => totalQty + item.qty , 0)     /*get selected products Qty */
 
 
@@ -82,7 +89,7 @@ const GetProductQty = (id : number)=>{                                /* for sho
 }
 
   return (
-    <ShopingCardContext.Provider value={{cartQty , cardItems , HandleIncreaseProductQty , HandleDecreaseProductQty ,GetProductQty}}>
+    <ShopingCardContext.Provider value={{ HandleRemoveProduct , cartQty , cardItems , HandleIncreaseProductQty , HandleDecreaseProductQty ,GetProductQty}}>
       {children}
     </ShopingCardContext.Provider>
   );
