@@ -1,5 +1,6 @@
 /*context*/
 import React, { createContext, useContext, useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 
 
@@ -36,7 +37,7 @@ return useContext(ShopingCardContext)
 export function ShoppingCardProvider({ children }: ShoppingCardProvider) {     /* a layout component for use context! */
 
 
-const [cardItems , setCardItems]= useState<carditem[]>([])                    /*an array for products */
+const [cardItems , setCardItems]= useLocalStorage<carditem[]>('CartItems' ,[])                    /*an array for products */
 
 const HandleIncreaseProductQty = (id : number) =>{                    
   setCardItems(currentItems => {                                             /*get last update*/
