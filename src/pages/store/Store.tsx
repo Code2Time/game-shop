@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 import { TbHandClick } from "react-icons/tb";
 import StoreItem from "../../components/storeItem/StoreItem";
 import { TiShoppingCart } from "react-icons/ti";
+
 function Store() {
 
 const { cartQty , cardItems } = useShopingCardContext();
+
 
   return (
     <div data-aos="fade-up">
@@ -33,7 +35,7 @@ const { cartQty , cardItems } = useShopingCardContext();
         <hr className="col-span-12 " />
           {  cardItems.map(item =>(
             
-        <StoreItem {...item}/>
+        <StoreItem key={item.id} {...item}/>
       ))}
         </div>
     

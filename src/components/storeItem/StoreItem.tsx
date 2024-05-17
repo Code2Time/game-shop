@@ -6,6 +6,7 @@ import { Iproducts } from "../../server/Server";
 import { Link } from "react-router-dom";
 import { IoTrash } from "react-icons/io5";
 
+
 interface IcardItem{
     id : number ;
     qty : number;
@@ -21,9 +22,9 @@ function StoreItem({id , qty} : IcardItem) {
     useEffect(()=>{
 axios.get(`http://localhost:3000/products/${id}`)
 .then((data) =>{
-    setProductStore(data.data);
+    setProductStore(data.data); 
 })
-},[])
+},[]);
 
    
   return (
@@ -43,6 +44,7 @@ axios.get(`http://localhost:3000/products/${id}`)
           <button onClick={()=>HandleIncreaseProductQty(id)}  className=" handle-btn w-10 h-10 rounded-full  ">+</button>
           <h1 className="show-product mx-3 w-12 h-20 text-center rounded-lg">{qty}</h1>
           <button onClick={()=>HandleDecreaseProductQty(id)} className=" handle-btn w-10 h-10 rounded-full  ">-</button>
+          
           <button onClick={()=>HandleRemoveProduct(id)} className=" mx-2 transition-all hover:text-red-800 hover:-translate-y-1" >
           <IoTrash  size={22}/>
           </button>

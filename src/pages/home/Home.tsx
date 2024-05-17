@@ -39,7 +39,7 @@ setProducts(res.data)
     <h1 className='col-span-12 text-xl text-cyan-400 border-r-4 border-slate-950 px-2 Lalezar'>آخرین محصولات</h1>
  {
   products.map(item => (
-    <ProductItem {...item}/>
+    <ProductItem key={item.id} {...item}/>
   ))
  }
   </div>

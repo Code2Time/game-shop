@@ -38,7 +38,7 @@ function Shop() {
         <h1 className="col-span-12 my-5 text-xl text-white Lalezar">جدید ترین ها</h1>
  {
   products.map(item => (
-    <ProductItem {...item}/>
+    <ProductItem key={item.id} {...item}/>
   ))
  }
   </div>
