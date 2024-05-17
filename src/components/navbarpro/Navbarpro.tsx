@@ -5,6 +5,10 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import { PiShoppingCartBold } from "react-icons/pi";
 import { useShopingCardContext } from '../../context/ShoppingCardContext';
+import { LiaOpencart } from 'react-icons/lia';
+import { SiHomebridge } from 'react-icons/si';
+import { GiConsoleController, GiNewspaper } from 'react-icons/gi';
+import { MdOutlinePersonOutline } from 'react-icons/md';
 
 
 
@@ -36,23 +40,33 @@ const {cartQty} = useShopingCardContext()
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4 ">
+                  <NavLink
+                      to="/login"
+                      className="text-gray-300 hover:bg-transparent  hover:text-white   px-3 py-2 text-sm font-medium Lamia flex justify-center items-center gap-2"
+                    >
+                      <span>ورود</span>
+                      <MdOutlinePersonOutline />
+                    </NavLink>
                     <NavLink
                       to="/shop"
-                      className="text-gray-300 hover:bg-transparent  hover:text-white   px-3 py-2 text-sm font-medium Lamia"
+                      className="text-gray-300 hover:bg-transparent  hover:text-white   px-3 py-2 text-sm font-medium Lamia flex justify-center items-center gap-2"
                     >
-                      محصولات
+                      <span>محصولات</span>
+                      <GiConsoleController />
                     </NavLink>
                     <NavLink
                       to="/news"
-                      className="text-gray-300 hover:bg-transparent  hover:text-white   px-3 py-2 text-sm font-medium Lamia"
+                      className="text-gray-300 hover:bg-transparent  hover:text-white   px-3 py-2 text-sm font-medium Lamia flex justify-center items-center gap-2"
                     >
-                      اخبار
+                      <span>اخبار</span>
+                      <GiNewspaper />
                     </NavLink>
                     <NavLink
                       to="/"
-                      className="text-gray-300 hover:bg-transparent hover:text-white  px-3 py-2 text-sm font-medium Lamia"
+                      className="text-gray-300 hover:bg-transparent hover:text-white  px-3 py-2 text-sm font-medium Lamia flex justify-center items-center gap-2"
                     >
-                      صفحه اصلی
+                      <span>صفحه اصلی</span>
+                      <SiHomebridge />
                     </NavLink>
                   </div>
                 </div>
@@ -61,14 +75,10 @@ const {cartQty} = useShopingCardContext()
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
-                  <NavLink to='/store'>
-                    
-                 <div className='relative'>
-                 <PiShoppingCartBold size={22} color='#eee' className='transition-all hover:-translate-y-1' />
+                  <NavLink to='/store'> <div className='relative'>
+                 <LiaOpencart size={22} color='#eee' className='transition-all hover:-translate-y-1' />
                  {cartQty !== 0 ? <span className='z-10 absolute order-3 w-4 h-auto rounded-full bg-red-600 text-white text-center text-[10px] -top-1 -right-2'>{cartQty}</span> : ''}
-                 </div>
-                    
-                    </NavLink>
+                 </div></NavLink>
                   </div>
                   <Transition
                     as={Fragment}

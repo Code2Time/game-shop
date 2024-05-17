@@ -7,6 +7,7 @@ import Product from "./components/product/Product";
 import Store from "./pages/store/Store";
 import { ShoppingCardProvider } from "./context/ShoppingCardContext";
 import ScrollToTop from "./scroll/ScrollToTop";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/store" element={<Store />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
       </ShoppingCardProvider>
