@@ -3,34 +3,11 @@ import { FaTelegram } from "react-icons/fa6";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { IoLogoYoutube } from "react-icons/io";
 import { FaGoogle } from "react-icons/fa6";
-import { FaFacebookF } from "react-icons/fa";
 
 function Footer() {
   return (
     <footer>
       <div className="w-full h-10 grid grid-cols-12  ">
-        <div className="footer-sec1 col-span-12 h-auto flex justify-around items-center  p-10 ">
-          <div className="right-item">
-            <p className="Lalezar hidden sm:block">با ما در فضای مجازی در ارتباط باشید...</p>
-          </div>
-          <div className="left-item flex justify-center items-center mx-auto">
-            <a className="mx-1 transition-all hover:cursor-pointer hover:text-slate-300">
-              <FaTelegram size={25} />
-            </a>
-            <a className="mx-1 transition-all hover:cursor-pointer hover:text-slate-300">
-              <PiInstagramLogoFill size={25} />
-            </a>
-            <a className="mx-1 transition-all hover:cursor-pointer hover:text-slate-300">
-              <IoLogoYoutube size={25} />
-            </a>
-            <a className="mx-1 transition-all hover:cursor-pointer hover:text-slate-300">
-              <FaGoogle size={25} />
-            </a>
-            <a className="mx-1 transition-all hover:cursor-pointer hover:text-slate-300">
-              <FaFacebookF size={25} />
-            </a>
-          </div>
-        </div>
         <div className="footer-sec2  col-span-12 grid grid-cols-12 ">
           <div className="company-name  grid grid-cols-12 col-span-12  sm:col-span-4 p-20 ">
             <h1 className="col-span-12 Lalezar border-r-4 border-blue-800 px-2 text-white">
