@@ -4,7 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import { useShopingCardContext } from '../../context/ShoppingCardContext';
-import { GiConsoleController, GiNewspaper } from 'react-icons/gi';
+import { GiConsoleController} from 'react-icons/gi';
 import { SiHomebridge } from 'react-icons/si';
 import { LiaOpencart } from 'react-icons/lia';
 import { MdOutlinePersonOutline } from 'react-icons/md';

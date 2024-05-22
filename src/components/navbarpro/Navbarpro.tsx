@@ -3,11 +3,10 @@ import { Fragment} from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
-import { PiShoppingCartBold } from "react-icons/pi";
 import { useShopingCardContext } from '../../context/ShoppingCardContext';
 import { LiaOpencart } from 'react-icons/lia';
 import { SiHomebridge } from 'react-icons/si';
-import { GiConsoleController, GiNewspaper } from 'react-icons/gi';
+import { GiConsoleController } from 'react-icons/gi';
 import { MdOutlinePersonOutline } from 'react-icons/md';
 
 
