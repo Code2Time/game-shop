@@ -19,7 +19,7 @@ function Shop() {
   const [products , setProducts]=useState<Iproducts[]>([]) ;
 
   useEffect(() =>{
-  axios.get('http://localhost:3000/products')
+  axios.get('https://fakestoreapi.com/products')
   .then( (res) => {
   setProducts(res.data)
   })

@@ -20,7 +20,7 @@ function StoreItem({id , qty} : IcardItem) {
 
 
     useEffect(()=>{
-axios.get(`http://localhost:3000/products/${id}`)
+axios.get(`https://fakestoreapi.com/products/${id}`)
 .then((data) =>{
     setProductStore(data.data); 
 })
@@ -33,7 +33,7 @@ axios.get(`http://localhost:3000/products/${id}`)
         <div className="item1 col-span-12 grid grid-cols-12">
          <div className="p-20 sm:p-10 col-span-12 sm:col-span-5">
          <Link to={`/product/${id}`}>
-         <img className="w-full h-full rounded-sm cursor-pointer" src={productStore?.image} alt="productItem" />
+         <img className="w-[70%] h-[70%] rounded-md cursor-pointer" src={productStore?.image} alt="productItem" />
          </Link>
          </div>
          <div className="col-span-12 sm:col-span-3 flex justify-around items-center my-5 sm:my-0">

@@ -12,16 +12,16 @@ type Tproducts = Iproducts
 
 
 
-function ProductItem({title , image , description , price ,id}:Tproducts) {
+function ProductItem({title , image , category , price ,id}:Tproducts) {
   return (
     <div
     id=" card-container"
       data-aos="zoom-in"
-      className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 my-3 overflow-hidden  card-container w-[250px] h-[415px]  rounded-md shadow-lg shadow-slate-600 mx-auto transition-all hover:cursor-pointer  "
+      className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 my-3 overflow-hidden   card-container w-[250px] h-[450px]  rounded-md shadow-lg shadow-slate-600 mx-auto transition-all hover:cursor-pointer  "
     >
-      <div className="card-img p-3">
+      <div className="card-img p-3 w-full h-[45%]">
         <img
-          className="rounded-md shadow-sm shadow-gray-50 "
+          className="rounded-md shadow-sm shadow-gray-50 w-[70%] h-[70%]  mx-auto"
           src={image}
         />
       </div>
@@ -32,9 +32,9 @@ function ProductItem({title , image , description , price ,id}:Tproducts) {
       </div>
       <div className="card-body py-8 px-2 flex flex-col  items-center">
         <p className="text-zinc-300 text-justify ">
-         {description}
+         {category}
         </p>
-        <span className="text-gray-500 Lalezar p-2">{price}</span>
+        <span className="text-gray-500 Lalezar p-2">{price}$</span>
       </div>
      
         <Link

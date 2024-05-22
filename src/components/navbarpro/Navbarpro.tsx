@@ -55,13 +55,6 @@ const {cartQty} = useShopingCardContext()
                       <GiConsoleController />
                     </NavLink>
                     <NavLink
-                      to="/news"
-                      className="text-gray-300 hover:bg-transparent  hover:text-white   px-3 py-2 text-sm font-medium Lamia flex justify-center items-center gap-2"
-                    >
-                      <span>اخبار</span>
-                      <GiNewspaper />
-                    </NavLink>
-                    <NavLink
                       to="/"
                       className="text-gray-300 hover:bg-transparent hover:text-white  px-3 py-2 text-sm font-medium Lamia flex justify-center items-center gap-2"
                     >
@@ -102,12 +95,6 @@ const {cartQty} = useShopingCardContext()
                 className="text-gray-300  hover:text-white block rounded-md px-3 py-2 text-base font-medium text-center Yekan"
               >
                 صفحه اصلی
-              </NavLink>
-              <NavLink
-                to="/news"
-                className="text-gray-300 hover:bg-transparent !block text-center  hover:text-white  rounded-md px-3 py-2 text-sm font-medium Lamia"
-              >
-                اخبار
               </NavLink>
               <NavLink
                 to="/shop"
