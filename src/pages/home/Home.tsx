@@ -41,7 +41,7 @@ setProducts(res.data)
   products.map(item => (
     <ProductItem key={item.id} {...item}/>
   ))
- }
+ }    
   </div>
   <Footer />
   </div>
